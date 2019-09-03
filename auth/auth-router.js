@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 
 const db = require("./auth-model.js");
 const secrets = require("./secrets.js");
+
 router.post("/register", async (req, res) => {
 	const user = req.body;
 	const hash = bcrypt.hashSync(user.password, 12);

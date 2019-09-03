@@ -5,8 +5,9 @@ module.exports = {
 	findUser,
 };
 
-function register(creds) {
-	return db("users").insert(creds);
+async function register(creds) {
+	const [id] = await db("users").insert(creds, "id");
+	return db("users").where({ id });
 }
 
 function findUser(username) {

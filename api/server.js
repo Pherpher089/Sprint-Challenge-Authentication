@@ -15,8 +15,8 @@ server.use(express.json());
 server.use("/api/auth", authRouter);
 server.use("/api/jokes", authenticate, jokesRouter);
 
-server.get("/", async (req, res) => {
-	return res.status(200);
+server.get("/", (req, res) => {
+	return res.status(200).send("<h1>Hello from Auth Sprint Challenge!");
 });
 
 module.exports = server;
