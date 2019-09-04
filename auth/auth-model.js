@@ -6,7 +6,7 @@ module.exports = {
 };
 
 async function register(creds) {
-	const [id] = await db("users").insert(creds, "id");
+	const [id] = await db("users").insert(creds);
 	return db("users").where({ id });
 }
 
